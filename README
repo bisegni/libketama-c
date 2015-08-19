@@ -1,0 +1,2 @@
+c only implementation of ketama lib (https://github.com/RJ/ketama) using
+api for adding server isntead of file (remove_server will be added in the future).
