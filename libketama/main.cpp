@@ -11,10 +11,7 @@
 #include <stdlib.h>
 
 int main(int argc, char **argv) {
-
-    
     ketama_t ktma;
-    //ketama_roll( &c, "/Users/bisegni/Desktop/libketama/ketama.two.servers" );
     ketama_init(&ktma);
     ketama_add_server(&ktma, "192.168.1.1:11211", 60);
     ketama_add_server(&ktma, "192.168.1.2:11211", 30);

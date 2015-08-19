@@ -31,6 +31,7 @@
 		32F3E4091B84A7E2000DD4EC /* ketama.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ketama.h; sourceTree = "<group>"; };
 		32F3E40A1B84A7E2000DD4EC /* md5.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = md5.c; sourceTree = "<group>"; };
 		32F3E40B1B84A7E2000DD4EC /* md5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = md5.h; sourceTree = "<group>"; };
+		32F3E40E1B84C7E2000DD4EC /* README */ = {isa = PBXFileReference; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +48,7 @@
 		32967E851B84A0F80036CEE7 = {
 			isa = PBXGroup;
 			children = (
+				32F3E40E1B84C7E2000DD4EC /* README */,
 				32967E901B84A0F80036CEE7 /* libketama */,
 				32967E8F1B84A0F80036CEE7 /* Products */,
 			);
