@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		32967E921B84A0F80036CEE7 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 32967E911B84A0F80036CEE7 /* main.cpp */; };
+		32F3E40C1B84A7E2000DD4EC /* ketama.c in Sources */ = {isa = PBXBuildFile; fileRef = 32F3E4081B84A7E2000DD4EC /* ketama.c */; };
+		32F3E40D1B84A7E2000DD4EC /* md5.c in Sources */ = {isa = PBXBuildFile; fileRef = 32F3E40A1B84A7E2000DD4EC /* md5.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +27,10 @@
 /* Begin PBXFileReference section */
 		32967E8E1B84A0F80036CEE7 /* libketama */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = libketama; sourceTree = BUILT_PRODUCTS_DIR; };
 		32967E911B84A0F80036CEE7 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		32F3E4081B84A7E2000DD4EC /* ketama.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ketama.c; sourceTree = "<group>"; };
+		32F3E4091B84A7E2000DD4EC /* ketama.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ketama.h; sourceTree = "<group>"; };
+		32F3E40A1B84A7E2000DD4EC /* md5.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = md5.c; sourceTree = "<group>"; };
+		32F3E40B1B84A7E2000DD4EC /* md5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = md5.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +63,10 @@
 		32967E901B84A0F80036CEE7 /* libketama */ = {
 			isa = PBXGroup;
 			children = (
+				32F3E4081B84A7E2000DD4EC /* ketama.c */,
+				32F3E4091B84A7E2000DD4EC /* ketama.h */,
+				32F3E40A1B84A7E2000DD4EC /* md5.c */,
+				32F3E40B1B84A7E2000DD4EC /* md5.h */,
 				32967E911B84A0F80036CEE7 /* main.cpp */,
 			);
 			path = libketama;
@@ -118,6 +128,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32F3E40D1B84A7E2000DD4EC /* md5.c in Sources */,
+				32F3E40C1B84A7E2000DD4EC /* ketama.c in Sources */,
 				32967E921B84A0F80036CEE7 /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -235,6 +247,7 @@
 				32967E971B84A0F80036CEE7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
