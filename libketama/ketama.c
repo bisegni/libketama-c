@@ -3,6 +3,8 @@
 * Richard Jones <rj@last.fm>
 * Christian Muehlhaeuser <muesli@gmail.com>
 *
+* Modified by Claudio Bisegni <Claudio.Bisegni@lnf.infn.it> (Italian InstituteOf Nuclear Phisycs - INFN)
+*
 * Redistribution and use in source and binary forms, with or without
 * modification, are permitted provided that the following conditions are met:
 *     * Redistributions of source code must retain the above copyright

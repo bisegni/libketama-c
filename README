@@ -5,8 +5,10 @@ The repository now has only an xcode project, in future will be added more compi
 Anyway the files libketama/ketama.c and libketama/md5.c compile also on linux and probably on window.
 Only ketama.c has been update to expose new api and structure.
 
+
  "C" Example:
 
+```c++
 ketama_t ktma;
 ketama_init(&ktma);
 ketama_add_server(&ktma, "192.168.1.1:11211", 60);
@@ -27,3 +29,4 @@ for ( i = 0; i < 1000000; i++ ) {
   printf( "hash:%u Continuum point:%u Host:%s\n", kh, m->point, m->ip );
 }
 ketama_destroy(&ktma);
+```
