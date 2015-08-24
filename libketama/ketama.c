@@ -154,6 +154,34 @@ ketama_add_server(ketama_t* ketama,
     return 0;
 }
 
+int
+ketama_remove_server(ketama_t* ketama,
+                     const char * server_address_port) {
+    unsigned int new_server_number = 0;
+    serverinfo* new_server_list = NULL;
+    if(ketama->numservers==0 ||
+       ketama->slist == NULL) return -1;
+    
+    //scan all server removing that one that is equal to the input c string
+    for(int s_index = 0; s_index < ketama->numservers; s_index++) {
+        //compare server name
+        if(strncmp(ketama->slist[s_index].addr, server_address_port, KETAMA_HOST_NAME_LENGTH) == 0) {
+            //we have found the server to remove
+            continue;
+        }
+        
+        //add server to keep into the new list
+        new_server_list = (serverinfo*)realloc( new_server_list, sizeof( serverinfo ) * (new_server_number+1));
+        memcpy( &new_server_list[new_server_number++], &ketama->slist[s_index], sizeof( serverinfo ) );
+    }
+   
+    //we have scan all server so change the list
+    free(ketama->slist);
+    ketama->slist = new_server_list;
+    ketama->numservers = new_server_number;
+    return 0;
+}
+
 unsigned int
 ketama_hashi(char* in_string) {
     unsigned char digest[16];

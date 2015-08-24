@@ -101,8 +101,7 @@ extern "C" {
      \param server_address_port the server address string "host:port"
      */
     int ketama_remove_server(ketama_t* ketama,
-                             const char * server_address_port,
-                             unsigned long weight);
+                             const char * server_address_port);
     
     //!Update ketama continuum
     /*!
