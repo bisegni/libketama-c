@@ -49,19 +49,17 @@
 char k_error[255] = "";
 
 
-/** \brief Compare two server entries in the circle.
- * \param a The first entry.
- * \param b The second entry.
- * \return -1 if b greater a, +1 if a greater b or 0 if both are equal. */
 int
-ketama_compare( mcs *a, mcs *b )
+ketama_compare(mcs *a,
+               mcs *b )
 {
     return ( a->point < b->point ) ?  -1 : ( ( a->point > b->point ) ? 1 : 0 );
 }
 
-/* ketama.h does not expose this function */
+
 void
-ketama_md5_digest( char* in_string, unsigned char md5pword[16] )
+ketama_md5_digest( char* in_string,
+                  unsigned char md5pword[16] )
 {
     md5_state_t md5state;
 
@@ -69,7 +67,6 @@ ketama_md5_digest( char* in_string, unsigned char md5pword[16] )
     md5_append( &md5state, (unsigned char *)in_string, (int)strlen( in_string ) );
     md5_finish( &md5state, md5pword );
 }
-
 
 int
 ketama_update_continuum(ketama_t* ketama) {
@@ -126,12 +123,9 @@ ketama_update_continuum(ketama_t* ketama) {
     return 0;
 }
 
-/** \brief Retrieve a serverinfo struct fromhost string and weight.
- * \param server_address_port The entire server address and port as c string
- * \param weight the whight of the server
- * \return A serverinfo struct, parsed from the given definition. */
 static serverinfo
-get_server_info(const char* server_address_port, unsigned long weight ) {
+get_server_info(const char* server_address_port,
+                unsigned long weight ) {
     serverinfo server;
     memset(&server, 0, sizeof(serverinfo));
     
@@ -142,8 +136,9 @@ get_server_info(const char* server_address_port, unsigned long weight ) {
 }
 
 int
-ketama_add_server(ketama_t* ketama, const char * server_address_port, unsigned long weight)
-{
+ketama_add_server(ketama_t* ketama,
+                  const char * server_address_port,
+                  unsigned long weight) {
     serverinfo server = get_server_info( server_address_port, weight );
     if ( server.memory > 0 && strlen( server.addr ) ) {
         ketama->slist = (serverinfo*)realloc( ketama->slist, sizeof( serverinfo ) * ( ketama->numservers + 1 ) );
@@ -160,8 +155,7 @@ ketama_add_server(ketama_t* ketama, const char * server_address_port, unsigned l
 }
 
 unsigned int
-ketama_hashi( char* in_string )
-{
+ketama_hashi(char* in_string) {
     unsigned char digest[16];
 
     ketama_md5_digest( in_string, digest );
@@ -171,10 +165,9 @@ ketama_hashi( char* in_string )
                         |   digest[0] );
 }
 
-
 mcs*
-ketama_get_server( char* key, ketama_t *ketama )
-{
+ketama_get_server(ketama_t *ketama,
+                  char* key) {
     unsigned int h = ketama_hashi( key );
     int highp = ketama->ketama_continuum.numpoints;
     mcs *mcsarr = ketama->ketama_continuum.array;
@@ -212,15 +205,14 @@ ketama_init(ketama_t *ketama) {
 }
 
 void
-ketama_destroy( ketama_t *ketama ) {
+ketama_destroy(ketama_t *ketama ) {
     free(ketama->ketama_continuum.array);
     ketama_init(ketama);
 }
 
 
 void
-ketama_print_continuum( ketama_t *ketama )
-{
+ketama_print_continuum(ketama_t *ketama ) {
     int a;
     printf( "Numpoints in continuum: %d\n", ketama->ketama_continuum.numpoints );
 
