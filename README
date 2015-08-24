@@ -1,5 +1,5 @@
 "c" only implementation of ketama lib (https://github.com/RJ/ketama) using
-api for adding server isntead of file (remove_server will be added in the future).
+api for adding server instead of file.
 
 The repository now has only an xcode project, in future will be added more compilaiton types.
 Anyway the files libketama/ketama.c and libketama/md5.c compile also on linux and probably on window.

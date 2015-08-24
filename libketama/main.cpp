@@ -23,7 +23,7 @@ int main(int argc, char **argv) {
     
     ketama_print_continuum(&ktma);
     
-    int i;
+   /* int i;
     for ( i = 0; i < 1000000; i++ ) {
         char k[10];
         sprintf( k, "%d", i );
@@ -31,7 +31,15 @@ int main(int argc, char **argv) {
         mcs* m = ketama_get_server(&ktma, k);
         
         printf( "hash:%u Continuum point:%u Host:%s\n", kh, m->point, m->ip );
-    }
+    }*/
+    
+    //remove one server and update continuum
+    ketama_remove_server(&ktma, "macbisegni.lnf.infn.it:11211");
+                         
+    ketama_update_continuum(&ktma);
+
+    ketama_print_continuum(&ktma);
+
     ketama_destroy(&ktma);
     return 0;
 }
