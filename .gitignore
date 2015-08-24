@@ -1,2 +1,9 @@
 --help
 *xcuserdatad
+CMakeCache.txt
+CMakeFiles/*
+DerivedData/*
+Makefile
+cmake_install.cmake
+install_manifest.txt
+libketama.dylib
