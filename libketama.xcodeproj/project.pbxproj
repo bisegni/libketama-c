@@ -25,6 +25,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		322814151B8B171E00EC86C4 /* CMakeLists.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = "<group>"; };
 		32967E8E1B84A0F80036CEE7 /* libketama */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = libketama; sourceTree = BUILT_PRODUCTS_DIR; };
 		32967E911B84A0F80036CEE7 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		32F3E4081B84A7E2000DD4EC /* ketama.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ketama.c; sourceTree = "<group>"; };
@@ -48,6 +49,7 @@
 		32967E851B84A0F80036CEE7 = {
 			isa = PBXGroup;
 			children = (
+				322814151B8B171E00EC86C4 /* CMakeLists.txt */,
 				32F3E40E1B84C7E2000DD4EC /* README */,
 				32967E901B84A0F80036CEE7 /* libketama */,
 				32967E8F1B84A0F80036CEE7 /* Products */,

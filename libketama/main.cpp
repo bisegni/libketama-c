@@ -28,7 +28,7 @@ int main(int argc, char **argv) {
         char k[10];
         sprintf( k, "%d", i );
         unsigned int kh = ketama_hashi( k );
-        mcs* m = ketama_get_server( k, &ktma);
+        mcs* m = ketama_get_server(&ktma, k);
         
         printf( "hash:%u Continuum point:%u Host:%s\n", kh, m->point, m->ip );
     }
