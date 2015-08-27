@@ -35,7 +35,7 @@
 extern "C" {
 #endif
     
-#define KETAMA_HOST_NAME_LENGTH 64
+#define KETAMA_HOST_NAME_LENGTH 255
     
     typedef int (*compfn)( const void*, const void* );
     
