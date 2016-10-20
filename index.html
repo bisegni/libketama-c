@@ -19,30 +19,35 @@
     </section>
 
     <section class="main-content">
-      <h3>
-<a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Welcome to GitHub Pages.</h3>
+      <p>"c" only implementation of ketama lib (<a href="https://github.com/RJ/ketama">https://github.com/RJ/ketama</a>) using
+api for adding server instead of file.</p>
 
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here <a href="https://guides.github.com/features/mastering-markdown/">using GitHub Flavored Markdown</a>, select a template crafted by a designer, and publish. After your page is generated, you can check out the new <code>gh-pages</code> branch locally. If you’re using GitHub Desktop, simply sync your repository and you’ll see the new branch.</p>
+<p>The repository now has only an xcode project, in future will be added more compilaiton types.
+Anyway the files libketama/ketama.c and libketama/md5.c compile also on linux and probably on window.
+Only ketama.c has been update to expose new api and structure.</p>
 
-<h3>
-<a id="designer-templates" class="anchor" href="#designer-templates" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Designer Templates</h3>
+<p>"C" Example:</p>
 
-<p>We’ve crafted some handsome templates for you to use. Go ahead and click 'Continue to layouts' to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved.</p>
+<div class="highlight highlight-source-c++"><pre><span class="pl-c1">ketama_t</span> ktma;
+<span class="pl-en">ketama_init</span>(&amp;ktma);
+<span class="pl-en">ketama_add_server</span>(&amp;ktma, <span class="pl-s"><span class="pl-pds">"</span>192.168.1.1:11211<span class="pl-pds">"</span></span>, <span class="pl-c1">60</span>);
+<span class="pl-en">ketama_add_server</span>(&amp;ktma, <span class="pl-s"><span class="pl-pds">"</span>192.168.1.2:11211<span class="pl-pds">"</span></span>, <span class="pl-c1">30</span>);
+<span class="pl-en">ketama_add_server</span>(&amp;ktma, <span class="pl-s"><span class="pl-pds">"</span>192.168.1.3:11211<span class="pl-pds">"</span></span>, <span class="pl-c1">10</span>);
 
-<h3>
-<a id="creating-pages-manually" class="anchor" href="#creating-pages-manually" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Creating pages manually</h3>
+<span class="pl-en">ketama_update_continuum</span>(&amp;ktma);
 
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
+<span class="pl-en">ketama_print_continuum</span>(&amp;ktma);
 
-<h3>
-<a id="authors-and-contributors" class="anchor" href="#authors-and-contributors" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Authors and Contributors</h3>
+<span class="pl-k">int</span> i;
+<span class="pl-k">for</span> ( i = <span class="pl-c1">0</span>; i &lt; <span class="pl-c1">1000000</span>; i++ ) {
+  <span class="pl-k">char</span> k[<span class="pl-c1">10</span>];
+  <span class="pl-c1">sprintf</span>( k, <span class="pl-s"><span class="pl-pds">"</span>%d<span class="pl-pds">"</span></span>, i );
+  <span class="pl-k">unsigned</span> <span class="pl-k">int</span> kh = <span class="pl-c1">ketama_hashi</span>( k );
+  mcs* m = <span class="pl-c1">ketama_get_server</span>(&amp;ktma, k);
 
-<p>You can @mention a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor’s GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
-
-<h3>
-<a id="support-or-contact" class="anchor" href="#support-or-contact" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Support or Contact</h3>
-
-<p>Having trouble with Pages? Check out our <a href="https://help.github.com/pages">documentation</a> or <a href="https://github.com/contact">contact support</a> and we’ll help you sort it out.</p>
+  <span class="pl-c1">printf</span>( <span class="pl-s"><span class="pl-pds">"</span>hash:%u Continuum point:%u Host:%s<span class="pl-cce">\n</span><span class="pl-pds">"</span></span>, kh, m-&gt;point, m-&gt;ip );
+}
+<span class="pl-en">ketama_destroy</span>(&amp;ktma);</pre></div>
 
       <footer class="site-footer">
         <span class="site-footer-owner"><a href="https://github.com/bisegni/libketama-c">Libketama-c</a> is maintained by <a href="https://github.com/bisegni">bisegni</a>.</span>
